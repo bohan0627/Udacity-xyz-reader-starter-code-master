@@ -16,11 +16,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.text.format.DateUtils;
 import android.util.Log;
-import android.util.TypedValue;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -66,11 +63,9 @@ public class ArticleListActivity extends AppCompatActivity implements
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
 
-        //final View toolbarContainerView = findViewById(R.id.toolbar_container);
+        mSwipeRefreshLayout =  findViewById(R.id.swipe_refresh_layout);
 
-        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
-
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView =  findViewById(R.id.recycler_view);
         getSupportLoaderManager().initLoader(0, null, this);
 
         if (savedInstanceState == null) {
@@ -228,16 +223,15 @@ public class ArticleListActivity extends AppCompatActivity implements
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        //public DynamicHeightNetworkImageView thumbnailView;
-        final ImageView thumbnailView;
+        public final ImageView thumbnailView;
         public TextView titleView;
         public TextView subtitleView;
 
         public ViewHolder(View view) {
             super(view);
             thumbnailView = view.findViewById(R.id.thumbnail);
-            titleView = (TextView) view.findViewById(R.id.article_title);
-            subtitleView = (TextView) view.findViewById(R.id.article_subtitle);
+            titleView =  view.findViewById(R.id.article_title);
+            subtitleView =  view.findViewById(R.id.article_subtitle);
         }
     }
 }
