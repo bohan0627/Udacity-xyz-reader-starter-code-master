@@ -25,4 +25,6 @@
     <color name="colorPrimary">#53abe4</color>
     <color name="colorPrimaryDark">#0275e6</color>
     <color name="colorAccent">#d78213</color>
+    <color name="dividerColor">#1f000000</color>
+    <color name="secondaryTextColor">#99000000</color>
 </resources>
